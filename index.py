@@ -1,4 +1,5 @@
 import os
+import art
 clear = lambda: os.system('clear')
 
 # to clear the console clear()
@@ -7,6 +8,8 @@ bidders = {}
 
 
 def auction():
+    print(art.logo)
+    print("Welcome to the silent auction 0.1 By Pedro Diogenes")
     continue_auction = 'yes'
     while continue_auction != 'no':
         current_bidder = input("What is your name?")
