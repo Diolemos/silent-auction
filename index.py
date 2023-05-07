@@ -3,17 +3,21 @@ clear = lambda: os.system('clear')
 
 # to clear the console clear()
 
-biders = {}
+bidders = {}
 
 
 def auction():
     continue_auction = 'yes'
     while continue_auction != 'no':
-      current_bider =   input("What your name?")
-      current_bid = input("What is your bid?")
-      biders[current_bider] = current_bid
-      continue_auction = input('is there more people in the room? type "yes" or "no" ' )
-      clear()
+        current_bidder = input("What is your name?")
+        current_bid = input("What is your bid?")
+        bidders[current_bidder] = int(current_bid)
+        continue_auction = input('Is there more people in the room? Type "yes" or "no" ')
+        clear()
 
-
-auction()        
+    highest_bidder = max(bidders, key=bidders.get)
+    highest_bid = bidders[highest_bidder]
+    
+    print(f"The highest bidder was {highest_bidder}, with ${highest_bid}")
+    
+auction()
